@@ -109,12 +109,13 @@ public class ImgViedoPtn {
     }
 
     public static void main(String[] args){
-        String content = "ces 测试测试<img src=\"/ueditor/jsp/upload/image/20161020/1476955508955072496.jpg\" title=\"\" alt=\"u3558.jpg\"/>测试第二行<img src=\"/ueditor/jsp/upload/image/20161020/1476955508983054245.jpg\" style=\"\"/><img src=\"/ueditor/jsp/upload/image/20161020/1476955509010039562.jpg\" style=\"\"/><img src=\"/ueditor/jsp/upload/image/20161020/1476955509013098720.jpg\" style=\"\"/>第三行<video class=\"edui-upload-video  vjs-default-skin video-js\" controls=\"\" preload=\"none\" width=\"420\" height=\"280\" src=\"/upload/20161020/uKISnfolEi5Wi6wF.wmv\"><source src=\"/upload/20161020/uKISnfolEi5Wi6wF.wmv\" type=\"video/wmv\"/></video>结尾结尾结尾，终于！！！！";
+        String content = "<p>ces 测试测试</p><img src=\"/ueditor/jsp/upload/image/20161020/1476955508955072496.jpg\" title=\"\" alt=\"u3558.jpg\"/>测试第二行<img src=\"/ueditor/jsp/upload/image/20161020/1476955508983054245.jpg\" style=\"\"/><img src=\"/ueditor/jsp/upload/image/20161020/1476955509010039562.jpg\" style=\"\"/><p><img src=\"/ueditor/jsp/upload/image/20161020/1476955509013098720.jpg\" style=\"\"/>第三行<video class=\"edui-upload-video  vjs-default-skin video-js\" controls=\"\" preload=\"none\" width=\"420\" height=\"280\" src=\"/upload/20161020/uKISnfolEi5Wi6wF.wmv\"><source src=\"/upload/20161020/uKISnfolEi5Wi6wF.wmv\" type=\"video/wmv\"/></video>结尾结尾结尾，终于</p><p>！！！！</p>";
 
         content = content.replaceAll("<(?!img|video)[.*?|.*?video]>|(data-setup=\"\\{.?\\}\")", "");
-        content = content.replaceAll("<source.*?>", "");
-
-        System.out.println(getVideos(content));
+//        content = content.replaceAll("<p.*?>(.*?)<\\/video>", "");
+//        content = content.replaceAll("<source.*?>", "");
+        System.out.println(content);
+//        System.out.println(getVideos(content));
 
         /*List<Map<String, Object>> test = getContentList(content);
 

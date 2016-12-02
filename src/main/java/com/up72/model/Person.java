@@ -1,9 +1,11 @@
 package com.up72.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/9/2.
  */
-public class Person {
+public class Person implements Serializable{
     private Long id;
     private String name;
     private int age; //默认 1岁
