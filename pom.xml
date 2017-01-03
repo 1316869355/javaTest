@@ -25,6 +25,8 @@
 
         <pinyin4j_version>2.5.0</pinyin4j_version>
         <jpinyin_version>1.1.7</jpinyin_version>
+        <!--<poi_version>3.10-FINAL</poi_version>-->
+        <poi_version>3.9</poi_version>
     </properties>
 
     <dependencies>
@@ -149,6 +151,17 @@
             <groupId>com.github.stuxuhai</groupId>
             <artifactId>jpinyin</artifactId>
             <version>${jpinyin_version}</version>
+        </dependency>
+        <!--POI 读取office 文件-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
         </dependency>
     </dependencies>
 </project>

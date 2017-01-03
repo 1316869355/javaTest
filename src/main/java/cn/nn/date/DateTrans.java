@@ -1,6 +1,7 @@
 package cn.nn.date;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -12,8 +13,9 @@ public class DateTrans {
 
 //    public static Date
     public static void main(String[] args){
-        Long timestap = 1477385162484L;
-        Date date = new Date(timestap);
-        System.out.println(DEFAULT_FORMAT.format(date));
+//        Date date = new Date(1478082590209L);
+//        Long timestap = 1477385162484L;
+
+//        System.out.println(DEFAULT_FORMAT.format(date));
     }
 }
