@@ -12,10 +12,10 @@ import java.util.zip.ZipOutputStream;
  */
 public class zipTest {
 
-    public static String deCompressFile(String file){
+    public static String deCompressFile(String file) {
         ArrayList<String> allFileName = new ArrayList<String>();
         File zipFile = new File(file);
-        String deCompressFilePath = file.substring(0, file.lastIndexOf("/")+1);
+        String deCompressFilePath = file.substring(0, file.lastIndexOf("/") + 1);
         try {
             FileInputStream fis = new FileInputStream(zipFile);
             ZipInputStream zins = new ZipInputStream(fis);
@@ -45,14 +45,14 @@ public class zipTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("找不到文件");
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return zipFile.getAbsolutePath();
     }
 
-    public static void main(String[] args){
-        String path = "e:/360Downloads/maven.zip";
+    public static void main(String[] args) {
+        String path = "/F:/ruidong/ruidong-web/target/ruidong/upload/20161205/vJH2yuGHPY8Mt5hO.rar";
         deCompressFile(path);
     }
 }
