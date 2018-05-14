@@ -158,6 +158,7 @@ public class DateUtils {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
         int i = 0;
+        if (day <= 0 ) return false;
         boolean flag = true;
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
             i = 1;
@@ -167,17 +168,17 @@ public class DateUtils {
             i = 3;
         switch (i) {
             case 1:
-                if (day >= 32 || day <= 0) flag = false;
+                if (day >= 32) flag = false;
                 break;
             case 2:
             	if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-            		if (day > 29 || day <= 0) flag = false;
+            		if (day > 29) flag = false;
                 } else {
-                	if (day > 28 || day <= 0) flag = false;
+                	if (day > 28) flag = false;
                 }
             	break;
             case 3:
-                if (day > 30 || day <= 0) {
+                if (day > 30) {
                 	flag = false;
                 }
                 break;
@@ -186,6 +187,5 @@ public class DateUtils {
                 break;
         }
         return flag;
-    }
 
 }
