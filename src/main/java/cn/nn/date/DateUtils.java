@@ -158,71 +158,34 @@ public class DateUtils {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
         int i = 0;
-        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-            //闰年
-            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-                i = 1;
-            else if (month == 2)
-                i = 2;
-            else if (month == 4 || month == 6 || month == 9 || month == 11)
-                i = 3;
-            else
-                i = 4;
-            switch (i) {
-                case 1:
-                    if (day >= 32 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                case 2:
-                    if (day >= 30 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                case 3:
-                    if (day >= 31 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                default:
-                    return false;
-            }
-        } else {
-            //闰年
-            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-                i = 1;
-            else if (month == 2)
-                i = 2;
-            else if (month == 4 || month == 6 || month == 9 || month == 11)
-                i = 3;
-            else
-                i = 4;
-            switch (i) {
-                case 1:
-                    if (day >= 32 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                case 2:
-                    if (day >= 29 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                case 3:
-                    if (day >= 31 || day <= 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                default:
-                    return false;
-            }
+        boolean flag = true;
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+            i = 1;
+        else if (month == 2)
+            i = 2;
+        else if (month == 4 || month == 6 || month == 9 || month == 11)
+            i = 3;
+        switch (i) {
+            case 1:
+                if (day >= 32 || day <= 0) flag = false;
+                break;
+            case 2:
+            	if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+            		if (day > 29 || day <= 0) flag = false;
+                } else {
+                	if (day > 28 || day <= 0) flag = false;
+                }
+            	break;
+            case 3:
+                if (day > 30 || day <= 0) {
+                	flag = false;
+                }
+                break;
+            default:
+                flag = false;
+                break;
         }
+        return flag;
     }
 
 }
